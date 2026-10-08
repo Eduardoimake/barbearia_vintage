@@ -1,0 +1,141 @@
+"""Rotas versionadas da API da Barbearia Vintage & Co."""
+
+from __future__ import annotations
+
+from django.urls import path
+
+from .views import (
+    AdminBarberDetailView,
+    AdminBarberListCreateView,
+    AdminCategoryDetailView,
+    AdminCategoryListCreateView,
+    AdminDashboardView,
+    AdminPromotionDetailView,
+    AdminPromotionListCreateView,
+    AdminServiceDetailView,
+    AdminServiceListCreateView,
+    AdminStoreView,
+    CsrfTokenView,
+    LoginView,
+    LogoutView,
+    MeView,
+    PublicBarberDetailView,
+    PublicBarberListView,
+    PublicCategoryListView,
+    PublicPromotionListView,
+    PublicServiceDetailView,
+    PublicServiceListView,
+    PublicStoreView,
+)
+
+
+app_name: str = "catalog"
+
+
+urlpatterns = [
+    path(
+        "public/store/",
+        PublicStoreView.as_view(),
+        name="public-store",
+    ),
+    path(
+        "public/categories/",
+        PublicCategoryListView.as_view(),
+        name="public-categories",
+    ),
+    path(
+        "public/services/",
+        PublicServiceListView.as_view(),
+        name="public-services",
+    ),
+    path(
+        "public/services/<slug:slug>/",
+        PublicServiceDetailView.as_view(),
+        name="public-service-detail",
+    ),
+    path(
+        "public/barbers/",
+        PublicBarberListView.as_view(),
+        name="public-barbers",
+    ),
+    path(
+        "public/barbers/<slug:slug>/",
+        PublicBarberDetailView.as_view(),
+        name="public-barber-detail",
+    ),
+    path(
+        "public/promotions/",
+        PublicPromotionListView.as_view(),
+        name="public-promotions",
+    ),
+    path(
+        "auth/csrf/",
+        CsrfTokenView.as_view(),
+        name="auth-csrf",
+    ),
+    path(
+        "auth/login/",
+        LoginView.as_view(),
+        name="auth-login",
+    ),
+    path(
+        "auth/me/",
+        MeView.as_view(),
+        name="auth-me",
+    ),
+    path(
+        "auth/logout/",
+        LogoutView.as_view(),
+        name="auth-logout",
+    ),
+    path(
+        "admin/dashboard/",
+        AdminDashboardView.as_view(),
+        name="admin-dashboard",
+    ),
+    path(
+        "admin/services/",
+        AdminServiceListCreateView.as_view(),
+        name="admin-services",
+    ),
+    path(
+        "admin/services/<int:pk>/",
+        AdminServiceDetailView.as_view(),
+        name="admin-service-detail",
+    ),
+    path(
+        "admin/categories/",
+        AdminCategoryListCreateView.as_view(),
+        name="admin-categories",
+    ),
+    path(
+        "admin/categories/<int:pk>/",
+        AdminCategoryDetailView.as_view(),
+        name="admin-category-detail",
+    ),
+    path(
+        "admin/barbers/",
+        AdminBarberListCreateView.as_view(),
+        name="admin-barbers",
+    ),
+    path(
+        "admin/barbers/<int:pk>/",
+        AdminBarberDetailView.as_view(),
+        name="admin-barber-detail",
+    ),
+    path(
+        "admin/store/",
+        AdminStoreView.as_view(),
+        name="admin-store",
+    ),
+    path(
+        "admin/promotions/",
+        AdminPromotionListCreateView.as_view(),
+        name="admin-promotions",
+    ),
+    path(
+        "admin/promotions/<int:pk>/",
+        AdminPromotionDetailView.as_view(),
+        name="admin-promotion-detail",
+    ),
+]

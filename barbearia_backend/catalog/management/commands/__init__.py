@@ -1,0 +1,1 @@
+"""Comandos executáveis pelo utilitário manage.py."""

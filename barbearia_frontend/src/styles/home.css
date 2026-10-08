@@ -1,0 +1,247 @@
+/* Seções da página inicial (ordem do homePage.html) */
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  padding-block: var(--space-8) var(--space-7);
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(200, 164, 93, 0.16), transparent 55%),
+    var(--color-bg);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-7);
+  align-items: center;
+}
+
+.hero__title {
+  font-size: clamp(2.3rem, 6vw, 4.2rem);
+}
+
+.hero__text {
+  max-width: 52ch;
+  margin-top: var(--space-4);
+  color: var(--color-muted);
+  font-size: 1.1rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.hero__visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  min-height: 340px;
+  overflow: hidden;
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+}
+
+.hero__badge,
+.hero__features {
+  position: relative;
+}
+
+.hero__badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  border: 2px solid var(--color-accent);
+  border-radius: 50%;
+  background: rgba(20, 16, 13, 0.75);
+}
+
+.hero__monogram {
+  color: var(--color-accent-strong);
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.hero__est {
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.hero__features {
+  display: grid;
+  gap: var(--space-2);
+  text-align: center;
+  font-weight: 600;
+}
+
+.hero__scroll {
+  display: block;
+  margin-top: var(--space-6);
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.hero__scroll:hover {
+  color: var(--color-accent-strong);
+}
+
+/* ---------- Seções ---------- */
+.home-section {
+  padding-block: var(--space-8);
+}
+
+.home-section--alt {
+  background: var(--color-surface);
+  border-block: 1px solid var(--color-border);
+}
+
+.section-header {
+  display: grid;
+  gap: var(--space-2);
+  justify-items: start;
+  max-width: 62ch;
+  margin-bottom: var(--space-6);
+}
+
+.section-title {
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+}
+
+.section-text {
+  color: var(--color-muted);
+}
+
+.section-text--lg {
+  font-size: 1.1rem;
+}
+
+.section-link {
+  font-weight: 700;
+}
+
+.subsection-title {
+  margin-bottom: var(--space-4);
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-footer {
+  margin-top: var(--space-6);
+  text-align: center;
+}
+
+/* ---------- Sobre nós ---------- */
+.about {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.about__number {
+  color: var(--color-border);
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 12vw, 8rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.about__content {
+  display: grid;
+  gap: var(--space-4);
+  justify-items: start;
+}
+
+/* ---------- Como funciona ---------- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-5);
+  counter-reset: passo;
+}
+
+.step {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.step__number {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--color-accent);
+  border-radius: 50%;
+  color: var(--color-on-accent);
+  font-weight: 700;
+}
+
+.step p {
+  color: var(--color-muted);
+}
+
+/* ---------- Contato ---------- */
+.contact-block {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.contact-block .info-list {
+  margin-block: var(--space-4);
+}
+
+/* ---------- Chamada final ---------- */
+.cta-final {
+  padding-block: var(--space-8);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(200, 164, 93, 0.18), transparent 60%),
+    var(--color-bg);
+  text-align: center;
+}
+
+.cta-final__inner {
+  display: grid;
+  gap: var(--space-4);
+  justify-items: center;
+}
+
+@media (max-width: 600px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+}

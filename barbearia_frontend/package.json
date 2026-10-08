@@ -1,0 +1,16 @@
+{
+  "name": "barbearia-vintage-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Frontend SPA (Vanilla JS + Vite) da Barbearia Vintage & Co.",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}

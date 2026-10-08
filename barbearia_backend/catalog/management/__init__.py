@@ -1,0 +1,1 @@
+"""Comandos administrativos personalizados da aplicação catalog."""
